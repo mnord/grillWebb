@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+article {
+    position: relative;
+    top: 70px;
+}
+
+.titel-bokning {
+    
+padding: 20px;
+}
+
+
+
+
+@media screen and (min-width: 481px) {
+    article {
+        position: relative;
+        top: 130px;
+    }
+}

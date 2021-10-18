@@ -164,12 +164,6 @@ main {
     text-align: center;
 }
 
-.titel-bokning {
-    position: relative;
-    top: 70px;
-    padding: 20px;
-}
-
 footer {
     background-color: silver;
     min-height: 30px;
