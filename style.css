@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+html {
+    font-size: 14px;
+    height: 100%;
+}
+
+body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;    
+}
+
+
+.wrapper{
+    background-color: ivory;
+    margin: 0 auto;
+    padding: 0;
+    height: 100vh;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas: "header"
+                        "main"
+                        "footer";
+}
+
+header {
+    background-color: floralwhite;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    grid-area: header;
+}
+
+.logo {
+    padding: 15px;
+}
+
+/*Här börjar mobil dropdown meny. Rör inte!!! */
+
+#menubox{
+    display: none;
+}
+
+nav {
+    background-color: black;
+    position: absolute;   
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 200ms ease-out;
+}
+
+
+nav a {
+    color: ivory;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    font-weight: bold;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul a {
+    display: block;
+    padding: 30px;
+}
+
+nav ul a:hover {
+    background-color: rgba(255, 255, 255, 0.158);
+    color: white;
+}
+
+#menubox:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+#menubox:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 200ms ease-out 100ms;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/*här börjar hamburger menu bild animation med css */
+
+.menu-icon .nav-icon {
+    background: ivory;
+    display: block;
+    height: 3px;
+    width: 20px;
+    position: relative;   
+}
+
+.menu-icon .nav-icon::before {
+    background: ivory;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 0.2 ease-out;
+    top: 6px;
+}
+
+.menu-icon .nav-icon::after {
+    background: ivory;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 0.2 ease-out;
+    top: -6px;
+}
+
+
+#menubox:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+#menubox:checked ~ .menu-icon .nav-icon::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+#menubox:checked ~ .menu-icon .nav-icon::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/*Här slutar kod för dropdown meny. */
+
+main {
+    grid-area: main;
+    background: white;
+    text-align: center;
+}
+
+.titel-bokning {
+    position: relative;
+    top: 70px;
+    padding: 20px;
+}
+
+footer {
+    background-color: silver;
+    min-height: 30px;
+    grid-area: footer;
+}
+
+/*Desktop */
+@media screen and (min-width: 481px) {
+
+    .menu-icon {
+        display: none;
+    }
+
+    .wrapper, header {
+        max-width: 1440px;
+    }
+
+    nav {
+        all: unset;
+        background-color: black;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: black;
+    }
+    
+    nav ul li {
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+
+    nav ul a{
+        padding: 20px;
+        opacity: 1;
+    }
+}
+
