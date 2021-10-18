@@ -126,7 +126,7 @@ nav ul a:hover {
     height: 100%;
     width: 100%;
     position: absolute;
-    transition: all 0.2 ease-out;
+    transition: all 200ms ease-out;
     top: 6px;
 }
 
@@ -137,7 +137,7 @@ nav ul a:hover {
     height: 100%;
     width: 100%;
     position: absolute;
-    transition: all 0.2 ease-out;
+    transition: all 200ms ease-out;
     top: -6px;
 }
 
