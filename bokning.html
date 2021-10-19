@@ -28,6 +28,32 @@
     <main class="main-bokning">
         <article>
             <h2 class="titel-bokning">Boka Bord</h2>
+            <form id="booking" action="">
+                <div>
+                    <label for="date">Välj datum:</label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div>
+                    <label for="antal">Antal gäster:</label>
+                    <input type="number" id="antal" name="antal">
+                </div>
+                <div>
+                    <label for="tid">Tid:</label>
+                    <input type="time" id="tid" name="tid">
+                </div>
+                <div>
+                    <label for="namn">Namn:</label>
+                    <input type="text" id="namn" name="namn">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div id="send">
+                    <input type="submit" value="Boka!">
+                </div>
+
+            </form>
         </article>
         
     </main>
